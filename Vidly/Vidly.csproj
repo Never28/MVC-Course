@@ -184,8 +184,37 @@
     <Compile Include="Migrations\201802201302137_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201802201302137_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802202155312_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201802202155312_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201802202155312_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802202156390_SetNameOfMembershipTypes.cs" />
+    <Compile Include="Migrations\201802202156390_SetNameOfMembershipTypes.Designer.cs">
+      <DependentUpon>201802202156390_SetNameOfMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802202200511_AddBirthDateToCustomer.cs" />
+    <Compile Include="Migrations\201802202200511_AddBirthDateToCustomer.Designer.cs">
+      <DependentUpon>201802202200511_AddBirthDateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802202209384_SetBirthdateToCustomer.cs" />
+    <Compile Include="Migrations\201802202209384_SetBirthdateToCustomer.Designer.cs">
+      <DependentUpon>201802202209384_SetBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802202229587_AddMovieFieldsAndGenre.cs" />
+    <Compile Include="Migrations\201802202229587_AddMovieFieldsAndGenre.Designer.cs">
+      <DependentUpon>201802202229587_AddMovieFieldsAndGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802202242592_AddGenres.cs" />
+    <Compile Include="Migrations\201802202242592_AddGenres.Designer.cs">
+      <DependentUpon>201802202242592_AddGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802202245294_AddMovies.cs" />
+    <Compile Include="Migrations\201802202245294_AddMovies.Designer.cs">
+      <DependentUpon>201802202245294_AddMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -235,6 +264,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -270,6 +300,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802201302137_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201802201302137_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802202155312_AddNameToMembershipType.resx">
+      <DependentUpon>201802202155312_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802202156390_SetNameOfMembershipTypes.resx">
+      <DependentUpon>201802202156390_SetNameOfMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802202200511_AddBirthDateToCustomer.resx">
+      <DependentUpon>201802202200511_AddBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802202209384_SetBirthdateToCustomer.resx">
+      <DependentUpon>201802202209384_SetBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802202229587_AddMovieFieldsAndGenre.resx">
+      <DependentUpon>201802202229587_AddMovieFieldsAndGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802202242592_AddGenres.resx">
+      <DependentUpon>201802202242592_AddGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802202245294_AddMovies.resx">
+      <DependentUpon>201802202245294_AddMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
