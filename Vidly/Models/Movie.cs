@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace Vidly.Models
 {
@@ -16,8 +14,9 @@ namespace Vidly.Models
 
         public Genre Genre { get; set; }
 
+        [Display(Name = "Genre")]
         [Required]
-        public int GenreId { get; set; }
+        public byte GenreId { get; set; }
 
         public DateTime DateAdded { get; set; }
 
@@ -25,8 +24,7 @@ namespace Vidly.Models
         public DateTime ReleaseDate { get; set; }
 
         [Display(Name = "Number in Stock")]
-        [Range(1,20)]
+        [Range(1, 20)]
         public byte NumberInStock { get; set; }
-
     }
 }

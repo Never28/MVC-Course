@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using Vidly.Dtos;
 using Vidly.Models;
@@ -27,38 +24,33 @@ namespace Vidly.Controllers.Api
                 .Include(c => c.MembershipType)
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>);
-
-            return Ok(customerDtos);
+            
+            return Ok(customerDtos);    
         }
-        
+
         // GET /api/customers/1
         public IHttpActionResult GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
-            {
-                NotFound();
-            }
+                return NotFound();
 
-            return Ok(Mapper.Map<Customer, CustomerDto>(customer)); 
+            return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
 
         // POST /api/customers
-        [HttpPost] //You can also call it PostCustomer without the tag HttpPost
+        [HttpPost]
         public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest();
-            }
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
             customerDto.Id = customer.Id;
-
             return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDto);
         }
 
@@ -67,16 +59,12 @@ namespace Vidly.Controllers.Api
         public IHttpActionResult UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest();
-            }
 
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
-            if(customerInDb == null)
-            {
+            if (customerInDb == null)
                 return NotFound();
-            }
 
             Mapper.Map(customerDto, customerInDb);
 
@@ -92,15 +80,12 @@ namespace Vidly.Controllers.Api
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customerInDb == null)
-            {
                 return NotFound();
-            }
 
             _context.Customers.Remove(customerInDb);
             _context.SaveChanges();
 
             return Ok();
         }
-
     }
 }
